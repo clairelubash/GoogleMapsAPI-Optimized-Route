@@ -30,21 +30,46 @@ def get_optimized_route(starting_ending_address, keyword_lst, k = 3):
 
     min_duration = df['duration'].min()
     best_waypoints = df.loc[df['duration'] == min_duration, 'waypoints'].tolist()
+    best_waypoints_add = df.loc[df['duration'] == min_duration, 'addresses'].tolist()
+    best_waypoints_names = df.loc[df['duration'] == min_duration, 'names'].tolist()
 
     optimized_route = [start_coords] + best_waypoints[0] + [start_coords]
 
-    return optimized_route
+    optimized_route_dict = {'origin': {'coordinates': start_coords, 'address': starting_ending_address, 'name': 'Origin & Destination'}}
+
+    for idx, coord_pair in enumerate(optimized_route[1:-1]):
+        stop_num = f'Stop #{idx+1}'.format()
+
+        if stop_num not in optimized_route_dict:
+            optimized_route_dict[stop_num] = {}
+
+        optimized_route_dict[stop_num]['coordinates'] = coord_pair
+        optimized_route_dict[stop_num]['address'] = best_waypoints_add[0][idx][0]
+        optimized_route_dict[stop_num]['name'] = best_waypoints_names[0][idx][0]
+
+    optimized_route_dict['destination'] = {'coordinates': start_coords, 'address': starting_ending_address, 'name': 'Origin & Destination'}
+
+    return optimized_route_dict
 
 
-def generate_map(coordinates):
+def generate_map(coordinates_dict):
+
+    coordinates = [sub_dict['coordinates'] for sub_dict in coordinates_dict.values() if 'coordinates' in sub_dict]
+
     map = folium.Map(location = coordinates[0], zoom_start = 12)
-    for i in range(len(coordinates)):
+
+    for i in range(len(coordinates_dict)):
         location = coordinates[i]
+        if 'address' in list(coordinates_dict.values())[i]:
+            add_value = list(coordinates_dict.values())[i]['address']
+        if 'name' in list(coordinates_dict.values())[i]:
+            name_value = list(coordinates_dict.values())[i]['name']
         if i == 0 or i == (len(coordinates) - 1):
-            tag = 'Origin & Destination'
+            tag = name_value + '\n' + add_value
         else:
-            tag = f'Stop #{i}'.format()
+            tag = f'Stop #{i}:'.format() + '\n' + name_value + '\n' + add_value
         folium.Marker(location, popup = tag).add_to(map)
+
     return map
 
 

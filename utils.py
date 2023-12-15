@@ -50,6 +50,8 @@ def closest_from_keyword(gmaps, keyword, latitude, longitude, k = None):
 
                 places_dict['latitude'] = i['geometry']['location']['lat']
                 places_dict['longitude'] = i['geometry']['location']['lng']
+                places_dict['address'] = i['formatted_address']
+                places_dict['name'] = i['name']
 
                 filtered_places_lst.append(places_dict)
                 unique_global_codes.add(curr_global_code)
@@ -125,18 +127,10 @@ def create_waypoint_combo_df(list_of_lists):
         df (pandas df): dataframe of waypoints coordinates
     """
 
-    # coordinates = []
-    # for lst in list_of_lists:
-    #     latitudes = [d['latitude'] for d in lst]
-    #     longitudes = [d['longitude'] for d in lst]
-    #     coordinates.append((latitudes, longitudes))
-
-    # combinations = [list(zip(*coords)) for coords in product(*coordinates)]
-
-    # df = pd.DataFrame({'waypoints': combinations})
-
     combinations = list(product(*list_of_lists))
     pairs = [[(item[i]['latitude'], item[i]['longitude']) for i in range(len(list_of_lists))] for item in combinations]
-    df = pd.DataFrame({'waypoints': pairs})
+    addresses = [[(item[i]['address'], ) for i in range(len(list_of_lists))] for item in combinations]
+    names = [[(item[i]['name'], ) for i in range(len(list_of_lists))] for item in combinations]
+    df = pd.DataFrame({'waypoints': pairs, 'addresses': addresses, 'names': names})
 
     return df
