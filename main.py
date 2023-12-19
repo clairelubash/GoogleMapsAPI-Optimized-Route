@@ -21,6 +21,8 @@ def index():
         formatted_dirs = format_instructions(dirs)
         formatted_duration = str(total_duration) + ' minutes'
 
+        itinerary = '\n\n'.join(f"{key.capitalize() if key in ['origin', 'destination'] else value['name'].split(':')[0]}: {value['address'].title()}" for key, value in result.items())
+
         generated_map = generate_map(result)
 
         map_file = "templates/map.html"
@@ -28,7 +30,8 @@ def index():
 
         return render_template('index.html', 
                                result = formatted_dirs, 
-                               total_duration = formatted_duration
+                               total_duration = formatted_duration,
+                               itinerary = itinerary,
                                )
 
     return render_template('input.html')

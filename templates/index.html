@@ -34,10 +34,21 @@
         .adjust-font-size {
             font-size: 24px;
         }
+
+        .itinerary {
+        white-space: pre-line;
+        }
     </style>
 </head>
 <body>
     <h1 style="text-align:center;">Optimized Route</h1>
+
+    <h1 class="adjust-font-size">Itinerary</h1>
+    <ul>
+        {% for item in itinerary.split('\n\n') %}
+          <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
 
     <h1 class="adjust-font-size">Total Driving Duration</h1>
     <p>{{ total_duration }}</p>
