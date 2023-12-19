@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e8f5a0ae8b18e625c88f2dd17f83221b {
+                #map_0dfd5a4f91db76e5d8e4bb2b68abb228 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,16 +39,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_e8f5a0ae8b18e625c88f2dd17f83221b" ></div>
+            <div class="folium-map" id="map_0dfd5a4f91db76e5d8e4bb2b68abb228" ></div>
         
 </body>
 <script>
     
     
-            var map_e8f5a0ae8b18e625c88f2dd17f83221b = L.map(
-                "map_e8f5a0ae8b18e625c88f2dd17f83221b",
+            var map_0dfd5a4f91db76e5d8e4bb2b68abb228 = L.map(
+                "map_0dfd5a4f91db76e5d8e4bb2b68abb228",
                 {
-                    center: [40.7969419, -74.4752453],
+                    center: [40.8012598, -74.4833426],
                     crs: L.CRS.EPSG3857,
                     zoom: 12,
                     zoomControl: true,
@@ -60,97 +60,133 @@
 
         
     
-            var tile_layer_d8940ea7902911cca08346db7abe5824 = L.tileLayer(
+            var tile_layer_f53080123f3a0d3627333df5e1d440da = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_d8940ea7902911cca08346db7abe5824.addTo(map_e8f5a0ae8b18e625c88f2dd17f83221b);
+            tile_layer_f53080123f3a0d3627333df5e1d440da.addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
         
     
-            var marker_93794d7b29337232679fb2cc37822fa3 = L.marker(
-                [40.7969419, -74.4752453],
+            var marker_32c1025a0c2629528e0717e5a44acbe1 = L.marker(
+                [40.8012598, -74.4833426],
                 {}
-            ).addTo(map_e8f5a0ae8b18e625c88f2dd17f83221b);
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
         
     
-        var popup_2e60c85f30c6e13fe733654b8b6f58cb = L.popup({"maxWidth": "100%"});
+            var icon_bb23f993e9e520aabba8c9e6ac6f20b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_32c1025a0c2629528e0717e5a44acbe1.setIcon(icon_bb23f993e9e520aabba8c9e6ac6f20b2);
+        
+    
+        var popup_8f45105db216b5949df508af2931617c = L.popup({"maxWidth": 500});
 
         
             
-                var html_890625bcc615e2a3e8c46238baf2d579 = $(`<div id="html_890625bcc615e2a3e8c46238baf2d579" style="width: 100.0%; height: 100.0%;">Origin 122 morris st morristown nj</div>`)[0];
-                popup_2e60c85f30c6e13fe733654b8b6f58cb.setContent(html_890625bcc615e2a3e8c46238baf2d579);
+                var html_574445b2dcef3a9352bf5f9b21a3b6ba = $(`<div id="html_574445b2dcef3a9352bf5f9b21a3b6ba" style="width: 100.0%; height: 100.0%;">             <b> Origin & Destination: </b> <br />             modera 55             </div>`)[0];
+                popup_8f45105db216b5949df508af2931617c.setContent(html_574445b2dcef3a9352bf5f9b21a3b6ba);
             
         
 
-        marker_93794d7b29337232679fb2cc37822fa3.bindPopup(popup_2e60c85f30c6e13fe733654b8b6f58cb)
+        marker_32c1025a0c2629528e0717e5a44acbe1.bindPopup(popup_8f45105db216b5949df508af2931617c)
         ;
 
         
     
     
-            var marker_32b6509d557f4ac5e457563f03db7161 = L.marker(
+            var poly_line_b2315dbe28c7f03623f08c6c9309a603 = L.polyline(
+                [[40.8012598, -74.4833426], [40.8617252, -74.3882532], [40.87522450000001, -74.430233], [40.8012598, -74.4833426]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
+        
+    
+            var marker_0e76855ad503032821a3bb8843d815ef = L.marker(
                 [40.8617252, -74.3882532],
                 {}
-            ).addTo(map_e8f5a0ae8b18e625c88f2dd17f83221b);
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
         
     
-        var popup_72c1451584585e1e909054c09d70964d = L.popup({"maxWidth": "100%"});
+        var popup_ede2c911f3750c2ae34ea8fc84a833d1 = L.popup({"maxWidth": 500});
 
         
             
-                var html_640b9f4ef0ad7d2de6066bcbd60dcfc8 = $(`<div id="html_640b9f4ef0ad7d2de6066bcbd60dcfc8" style="width: 100.0%; height: 100.0%;">Stop #1: Target 1157 US-46, Parsippany-Troy Hills, NJ 07054, United States</div>`)[0];
-                popup_72c1451584585e1e909054c09d70964d.setContent(html_640b9f4ef0ad7d2de6066bcbd60dcfc8);
+                var html_ed1edfad2fa7fd195ec439c73ecfe01c = $(`<div id="html_ed1edfad2fa7fd195ec439c73ecfe01c" style="width: 100.0%; height: 100.0%;">             <b>Stop #1: </b> Target <br />             <b>Address: </b> 1157 US-46, Parsippany-Troy Hills, NJ 07054, United States             </div>`)[0];
+                popup_ede2c911f3750c2ae34ea8fc84a833d1.setContent(html_ed1edfad2fa7fd195ec439c73ecfe01c);
             
         
 
-        marker_32b6509d557f4ac5e457563f03db7161.bindPopup(popup_72c1451584585e1e909054c09d70964d)
+        marker_0e76855ad503032821a3bb8843d815ef.bindPopup(popup_ede2c911f3750c2ae34ea8fc84a833d1)
         ;
 
         
     
     
-            var marker_f7ba2da1638bb70186a7c1fbe1d4be90 = L.marker(
+            var poly_line_b59364c65e4db51d168d87450de5d088 = L.polyline(
+                [[40.8012598, -74.4833426], [40.8617252, -74.3882532], [40.87522450000001, -74.430233], [40.8012598, -74.4833426]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
+        
+    
+            var marker_74451d7a11420417d7e9480ee613b191 = L.marker(
                 [40.87522450000001, -74.430233],
                 {}
-            ).addTo(map_e8f5a0ae8b18e625c88f2dd17f83221b);
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
         
     
-        var popup_585943cfbc126b3739e54a63ce71fd70 = L.popup({"maxWidth": "100%"});
+        var popup_a057de63ac505df069f5e2d0a3bcd83d = L.popup({"maxWidth": 500});
 
         
             
-                var html_7d377244eb0a9449c6a59825c8a341e9 = $(`<div id="html_7d377244eb0a9449c6a59825c8a341e9" style="width: 100.0%; height: 100.0%;">Stop #2: DSW Designer Shoe Warehouse 44 Waterview Blvd, Parsippany-Troy Hills, NJ 07054, United States</div>`)[0];
-                popup_585943cfbc126b3739e54a63ce71fd70.setContent(html_7d377244eb0a9449c6a59825c8a341e9);
+                var html_81bfe57bef53d1133b648581793adefe = $(`<div id="html_81bfe57bef53d1133b648581793adefe" style="width: 100.0%; height: 100.0%;">             <b>Stop #2: </b> DSW Designer Shoe Warehouse <br />             <b>Address: </b> 44 Waterview Blvd, Parsippany-Troy Hills, NJ 07054, United States             </div>`)[0];
+                popup_a057de63ac505df069f5e2d0a3bcd83d.setContent(html_81bfe57bef53d1133b648581793adefe);
             
         
 
-        marker_f7ba2da1638bb70186a7c1fbe1d4be90.bindPopup(popup_585943cfbc126b3739e54a63ce71fd70)
+        marker_74451d7a11420417d7e9480ee613b191.bindPopup(popup_a057de63ac505df069f5e2d0a3bcd83d)
         ;
 
         
     
     
-            var marker_8ac1e3a9a2355e408a5b658eaa4d4222 = L.marker(
-                [40.7969419, -74.4752453],
+            var poly_line_5e1ccc2c31238d82b18c1a03330a1640 = L.polyline(
+                [[40.8012598, -74.4833426], [40.8617252, -74.3882532], [40.87522450000001, -74.430233], [40.8012598, -74.4833426]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
+        
+    
+            var marker_8da39797d9e6bbd0949edccd75614432 = L.marker(
+                [40.8012598, -74.4833426],
                 {}
-            ).addTo(map_e8f5a0ae8b18e625c88f2dd17f83221b);
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
         
     
-        var popup_064635a75fd41668d3c386cc8c2024b9 = L.popup({"maxWidth": "100%"});
+            var icon_0a85a6166563e5d8ea037d1e7a35b832 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_8da39797d9e6bbd0949edccd75614432.setIcon(icon_0a85a6166563e5d8ea037d1e7a35b832);
+        
+    
+        var popup_2d585c6c8202304d1f586d0c98be8908 = L.popup({"maxWidth": 500});
 
         
             
-                var html_169536f0d0c8288e0150dc97cf4ea61b = $(`<div id="html_169536f0d0c8288e0150dc97cf4ea61b" style="width: 100.0%; height: 100.0%;">Destination 122 morris st morristown nj</div>`)[0];
-                popup_064635a75fd41668d3c386cc8c2024b9.setContent(html_169536f0d0c8288e0150dc97cf4ea61b);
+                var html_f3bfc92a9de74a7a5faa82d7880a4051 = $(`<div id="html_f3bfc92a9de74a7a5faa82d7880a4051" style="width: 100.0%; height: 100.0%;">             <b> Origin & Destination: </b> <br />             modera 55             </div>`)[0];
+                popup_2d585c6c8202304d1f586d0c98be8908.setContent(html_f3bfc92a9de74a7a5faa82d7880a4051);
             
         
 
-        marker_8ac1e3a9a2355e408a5b658eaa4d4222.bindPopup(popup_064635a75fd41668d3c386cc8c2024b9)
+        marker_8da39797d9e6bbd0949edccd75614432.bindPopup(popup_2d585c6c8202304d1f586d0c98be8908)
         ;
 
         
     
+    
+            var poly_line_9b0e47e82af8810c1d9b61972ebc4f46 = L.polyline(
+                [[40.8012598, -74.4833426], [40.8617252, -74.3882532], [40.87522450000001, -74.430233], [40.8012598, -74.4833426]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_0dfd5a4f91db76e5d8e4bb2b68abb228);
+        
 </script>
 </html>
