@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Directions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Directions</h1>
+    <p>{{ formatted_dirs | safe}}</p>
+
+    <a href="{{ url_for('index') }}"><button>Home</button></a>
+    <button onclick="goBack()" type="button">Back to Results</button>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

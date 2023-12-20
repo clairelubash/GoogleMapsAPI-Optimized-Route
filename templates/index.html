@@ -2,43 +2,7 @@
 <html>
 <head>
     <title>Directions & Map</title>
-    <style>
-        .back-to-input {
-            position: fixed; 
-            bottom: 80px; 
-            right: 20px; 
-            padding: 10px 20px; 
-            background-color: #007bff;
-            color: white; 
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 999;
-        }
-
-        .scroll-to-top {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px; 
-            padding: 10px 20px;
-        }
-
-        .adjust-font-size {
-            font-size: 24px;
-        }
-
-        .itinerary {
-        white-space: pre-line;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1 style="text-align:center;">Optimized Route</h1>
@@ -50,39 +14,24 @@
         {% endfor %}
     </ul>
 
+    <p><a href="/show_directions" class="directions-btn">Step-By-Step Directions</a></p>
+
     <h1 class="adjust-font-size">Total Driving Duration</h1>
     <p>{{ total_duration }}</p>
-
-    <h1 class="adjust-font-size">Directions</h1>
-    <p>{{ result | safe }}</p>
 
     <h1 class="adjust-font-size">Corresponding Map</h1>
     {% include 'map.html' %}
 
     <form action="/" method="get">
-        <input class="back-to-input" type="submit" value="Enter New Values">
+        <div class="form-wrapper">
+            <button type="submit" class="back-to-input">
+                Home <i class="fas fa-home"></i>
+            </button>
+        </div>
     </form>
 
     <button onclick="scrollToTop()" class="scroll-to-top" id="scrollToTopBtn" title="Go to top">Back to Top</button>
 
-    <script>
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
-        }
-
-        function scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
