@@ -39,6 +39,17 @@ python3 main.py
 - Click on the "Get Optimized Route" button to calculate the optimized route. 
 - The UI will display the ideal itineary, total driving duration, and an interactive map with the route outlined. For more detailed directions, click on the "Step-By-Step Directions" button. 
 
+## Limitations
+- The application is created with certain assumptions made about the user:
+
+    1. The user wants to return to the starting location at the end of the journey. 
+    2. The user wants to hit $n\ge1$ points of interest on the journey. 
+    3. The user's mode of transit is driving. 
+    4. The user wants the optimal route for leaving at the time of the application usage. 
+
+- Due to the cost of Google Maps API calls, we limit the search to the top $k=3$ closest locations of each point of interest to the starting location, in an effort to reduce the amount of API calls. 
+    - An option is to switch to completely free APIs like openrouteservice or OSRM. While free to call, these APIs are not meant for excessive use. 
+
 ### Helpful Links
 - [Google Maps Platform API Documentation](https://developers.google.com/maps/documentation)
 - [Python Client for Google Maps Services](https://github.com/googlemaps/google-maps-services-python)
