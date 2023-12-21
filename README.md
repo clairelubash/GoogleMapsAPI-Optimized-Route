@@ -42,10 +42,10 @@ python3 main.py
 ## Limitations
 - The application is created with certain assumptions made about the user:
 
-    1. The user wants to return to the starting location at the end of the journey. 
-    2. The user wants to hit $n\ge1$ points of interest on the journey. 
-    3. The user's mode of transit is driving. 
-    4. The user wants the optimal route for leaving at the time of the application usage. 
+    * The user wants to return to the starting location at the end of the journey. 
+    * The user wants to hit $n\ge1$ points of interest on the journey. 
+    * The user's mode of transit is driving. 
+    * The user wants the optimal route for leaving at the time of the application usage. 
 
 - Due to the cost of Google Maps API calls, we limit the search to the top $k=3$ closest locations of each point of interest to the starting location, in an effort to reduce the amount of API calls. 
     - An option is to switch to completely free APIs like openrouteservice or OSRM. While free to call, these APIs are not meant for excessive use. 
