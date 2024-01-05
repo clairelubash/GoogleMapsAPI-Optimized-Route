@@ -1,5 +1,5 @@
 # Optimizing Routes with Google Maps API
-A Flask application that leverages the suite of Google Maps APIs to provide the optimal driving route given an origin, and any points of interest.
+A Flask application that leverages the suite of Google Maps APIs to determine the most efficient driving route from a specified origin to various points of interest.
 
 - The Places API simplifies user input by allowing the use of 'keywords' instead of specific addresses, enhancing the user experience.
 - After specifying the starting location and desired points of interest, the application's UI presents the optimal itinerary, along with its corresponding driving time. An interactive Folium map illustrates the route, and step-by-step directions are provided by the Directions API.
